@@ -17,6 +17,7 @@ export default function RootLayout({
         <title>EduVerse</title>
       </head>
       <body className={`${inter.className} anitialised`}>{children}</body>
+      {/* <body className={`${openSans.className} anitialised`}>{children}</body> */}
     </html>
   );
 }
