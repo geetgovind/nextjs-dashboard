@@ -20,7 +20,7 @@ export default function Page() {
             className={`text-xl text-gray-800 md:text-3xl md:leading-normal ${lusitana.className} antialised`}
           >
             <strong>Welcome to EduVerse.</strong> This is the dashboard for the{' '}
-            <a href="https://github.com/geetgovind" className="text-blue-500">
+            <a href="https://github.com/geetgovind" target='_blank' className="text-blue-500">
               Next.js Project
             </a>
             , by geetgovind.
