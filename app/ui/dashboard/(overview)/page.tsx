@@ -55,7 +55,7 @@ export default async function Page() {
           <RevenueChart />
           {/* <RevenueChart revenue={revenue}/> */}
         </Suspense>
-        <Suspense>
+        <Suspense fallback={<LatestInvoicesSkeleton />}>
         <LatestInvoices />
         </Suspense>
         
