@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
 import { Suspense } from 'react';
-import { RevenueChartSkeleton } from '../../skeletons';
+import { RevenueChartSkeleton, LatestInvoicesSkeleton } from '../../skeletons';
 import { Card } from '@/app/ui/dashboard/cards';
 import RevenueChart from '@/app/ui/dashboard/revenue-chart';
 import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
 import { openSans } from '@/app/ui/fonts';
-import { fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
+import { fetchCardData } from '@/app/lib/data';
 
 // export default function dashboard() {
 //   return (
@@ -26,7 +26,7 @@ import { fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
 
 export default async function Page() {
   // const revenue = await fetchRevenue(); // for skeleton use
-  const latestInvoices = await fetchLatestInvoices();
+  // const latestInvoices = await fetchLatestInvoices(); // for skeleton use
   // const totalInvoices = allInvoices.length;
   // const totalCustomers = allCustomers.length;
   const {
@@ -55,8 +55,11 @@ export default async function Page() {
           <RevenueChart />
           {/* <RevenueChart revenue={revenue}/> */}
         </Suspense>
-
-        <LatestInvoices latestInvoices={latestInvoices} />
+        <Suspense>
+        <LatestInvoices />
+        </Suspense>
+        
+        {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
       </div>
     </main>
   );
