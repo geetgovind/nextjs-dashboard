@@ -1,6 +1,11 @@
 import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
-
+import { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'EduVerse',
+  description: 'EduVerse - Your Ultimate Destination for Digital Education',
+  metadataBase: new URL('https://nextjs-dashboard-iota-seven-48.vercel.app/'),
+};
 export default function RootLayout({
   children,
 }: {
